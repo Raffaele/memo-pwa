@@ -1,0 +1,23 @@
+{
+    "name": "memo pwa",
+    "short_name": "memo-pwa",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Memo app in PWA",
+    "theme_color": "#3367D6",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "./icons/pwa-icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./icons/pwa-icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ]
+}
