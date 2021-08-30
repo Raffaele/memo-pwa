@@ -161,12 +161,12 @@
             </div>
         {/each}
     </div>
-    <!-- {#if won} -->
+    {#if won}
     <div class="win-disclaimer">
         <div>You won</div>
         <button on:click={resetGame}>Reset</button>
     </div>
-    <!-- {/if} -->
+    {/if}
 </div>
 
 
@@ -242,5 +242,7 @@
         border-radius: 6px;
     }
 
-    .win-disclaimer {}
+    .win-disclaimer {
+        background-color: rgba(255, 0, 0, .5);
+    }
 </style>

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 500 500">
+	 viewBox="0 0 512 512">
+	<style>
+		.brain {
+			transform: translate(5%, 5%);
+		}
+		.filler {
+			fill: lightyellow;
+		}
+	</style>
+	<rect x="0" y="0" width="512" height="512" class="filler" />
 	<g class="brain">
 		<path fill="black" d="M151.245,222.446C148.054,237.039,135.036,248,119.5,248c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5
 			c23.774,0,43.522-17.557,46.966-40.386c14.556-1.574,27.993-8.06,38.395-18.677c2.899-2.959,2.85-7.708-0.109-10.606
