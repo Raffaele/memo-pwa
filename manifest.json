@@ -14,6 +14,16 @@
             "sizes": "192x192"
         },
         {
+            "src": "./icons/pwa-icon-256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "./icons/pwa-icon-348x348.png",
+            "type": "image/png",
+            "sizes": "348x348"
+        },
+        {
             "src": "./icons/pwa-icon-512x512.png",
             "type": "image/png",
             "sizes": "512x512",
