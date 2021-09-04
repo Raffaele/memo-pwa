@@ -26,7 +26,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2.5.0
         env:
           NODE_DEBUG: gh-pages
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           keep_history: true
           build_dir: public
