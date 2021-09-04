@@ -20,7 +20,10 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: yarn
+      - name: Build the app
+        run: yarn build
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
           keep_history: true
+          build_dir: public
