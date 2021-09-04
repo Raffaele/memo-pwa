@@ -24,7 +24,7 @@
             "sizes": "348x348"
         },
         {
-            "src": "./icons/pwa-icon-512x512.png",
+            "src": "./icons/pwa-icon-512.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any maskable"
