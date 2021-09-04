@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '14'
       - name: check variable
-        run: echo ${core.addPath}
+        run: echo ${{core.addPath}}
       - name: Install dependencies
         run: yarn
       - name: Build the app
