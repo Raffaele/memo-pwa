@@ -31,6 +31,7 @@ jobs:
             ${{ runner.os }}-yarn-
       # end
       - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
       - name: Build the app
         run: yarn build
