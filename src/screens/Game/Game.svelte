@@ -37,7 +37,7 @@
     $: {
         won = totalPaired === numOfCouples;
         if (won) {
-            saveBestTimeMemory(params.cards, params.unPair, timeDiff);
+            saveBestTimeMemory(params.cards, params.unPair, +timeDiff);
             clearInterval(intervalId);
             intervalId = null;
         }

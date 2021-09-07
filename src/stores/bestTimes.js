@@ -8,7 +8,7 @@ export const bestTimesMemory = writable(storedBestTime);
 export function saveBestTimeMemory(totalCards, unpairCards, bestTime) {
     const key = getKey(totalCards, unpairCards);
     bestTimesMemory.update(stored => {
-        if (stored[key] <= bestTime) return stored;
+        if (+stored[key] <= bestTime) return stored;
         return {
             ...stored,
             [key]: bestTime
