@@ -2,6 +2,7 @@
     import Icon from 'svelte-awesome';
     import { home } from 'svelte-awesome/icons';
     import { getRandomIcons } from '../../lib/icons';
+    import { shuffle } from '../../lib/array';
     const gameIcons = getRandomIcons();
 
     import {bestTimesMemory, saveBestTimeMemory} from '../../stores/bestTimes';
@@ -58,9 +59,10 @@
     $: cardLines = getCardLines(cards, cardMap);
 
     function getCardMap(mapSize) {
-        return Array.from({length: mapSize})
-            .map((_, i) => i)
-            .sort(() => Math.random() - .5);
+        const sortedArray = Array.from({length: mapSize})
+            .map((_, i) => i);
+
+        return shuffle(sortedArray);
     }
 
     function createCards(numOfCouples, numOfUnpair) {
@@ -131,7 +133,7 @@
             updateCard(card.index, 'hidden');
             isTemporaryBlocked = false;
             selectedCard = -1;
-        }, 1000);
+        }, 800);
     }
 </script>
 

@@ -13,7 +13,6 @@
     function goToPage(page) {
         push(`/home/${page}`);
     }
-    console.log(timeMemory);
 </script>
 
 <div class="main">
