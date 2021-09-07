@@ -32,7 +32,7 @@ jobs:
       # end
       - name: Install dependencies
         if: steps.dependency-cache.outputs.cache-hit != 'trueAA'
-        run: yarn
+        run: yarn --prefer-offline
       - name: Build the app
         run: yarn build
       - name: GitHub Pages
