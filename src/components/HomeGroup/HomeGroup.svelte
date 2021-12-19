@@ -1,10 +1,14 @@
 <script>
   import { link, push } from 'svelte-spa-router';
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+  import Icon from 'svelte-awesome';
   export let page;
   export let maxPage;
   export let nextLink;
   export let prevLink;
   export let timeMemory;
+  import { questionCircleO } from 'svelte-awesome/icons';
   const gameOptions = Array.from({ length: 8 }).map(
     (_, i) => 2 * i + 8 + page.unpair
   );
@@ -28,6 +32,9 @@
         Normal
       {:else}
         Unpair cards: {page.unpair}
+        <span on:click={() => dispatch('explanationAsk', page.unpair)}>
+          <Icon data={questionCircleO} />
+        </span>
       {/if}
     </h2>
     <div class="game-list">

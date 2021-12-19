@@ -24,14 +24,6 @@
   let intervalId;
   let won = false;
 
-  // onMount(() => {
-  //   // console.log('on mount');
-  //   // startGame(params);
-  // });
-
-  // $: numOfCards = params.cards;
-  // $: unPair = params.unPair;
-
   $: {
     startGame(params);
   }
@@ -100,6 +92,12 @@
 
   function updateCard(index, status) {
     cards = cards.map((c, i) => (i === index ? { ...c, status } : c));
+  }
+
+  let bestPreviousTime;
+  $: {
+    bestPreviousTime =
+      recordTime[`bestTime--${params.cards}--${params.unPair}`];
   }
 
   function startTime() {
@@ -172,11 +170,26 @@
   </div>
   {#if won}
     <Modal on:tapOnBackground={resetGame}>
-      <h3 class="modal-title">CONGRATULATIONS:</h3>
-      <h4 class="modal-sub-title">You won</h4>
-      <div>
-        <button on:click={resetGame}>RESET GAME</button>
-        <button on:click={pop}>GO TO HOME PAGE</button>
+      <div slot="title">CONGRATULATIONS:</div>
+      <div slot="sub-title">You won</div>
+      <p class="modal-body">
+        In {timeDiff} seconds
+      </p>
+
+      {#if timeDiff < bestPreviousTime}
+        <div class="modal-result best-result">BEST TIME</div>
+      {:else}
+        <div class="modal-result compared-result">
+          Best time {bestPreviousTime} secs
+        </div>
+      {/if}
+      <div class="modal-btn-field">
+        <button on:click={resetGame} class="modal-btn modal-reset-game-btn">
+          RESET GAME
+        </button>
+        <button on:click={pop} class="modal-btn modal-go-home-btn">
+          GO TO HOME PAGE
+        </button>
       </div>
     </Modal>
   {/if}
@@ -257,11 +270,20 @@
   .win-disclaimer {
     background-color: rgba(255, 0, 0, 0.5);
   }
-
-  .modal-title {
+  .modal-title,
+  .modal-sub-title,
+  .modal-body,
+  .modal-result {
     text-align: center;
   }
-  .modal-sub-title {
-    text-align: center;
+
+  .modal-btn-field {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .modal-btn {
+    font-size: small;
   }
 </style>

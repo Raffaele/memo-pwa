@@ -11,6 +11,12 @@
 
 <div class="modal-main" on:click={tapOnBackground}>
   <div class="modal-content">
+    <h3 class="modal-title">
+      <slot name="title" />
+    </h3>
+    <h4 class="modal-sub-title">
+      <slot name="sub-title" />
+    </h4>
     <slot />
   </div>
 </div>
@@ -20,14 +26,23 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     background-color: rgba(100, 100, 100, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10%;
   }
   .modal-content {
-    background-color: white;
-    padding: 30px;
+    background-color: lightyellow;
+    padding: 5%;
+    border-radius: 20px;
+    flex: 1;
+  }
+  .modal-title,
+  .modal-sub-title {
+    margin-top: 0;
+    text-align: center;
   }
 </style>

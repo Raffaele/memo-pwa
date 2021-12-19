@@ -1,5 +1,6 @@
 <script>
   import Router from 'svelte-spa-router';
+  import Modal from './components/Modal/Modal.svelte';
   import * as iconsGroup from 'svelte-awesome/icons';
   import Icon from 'svelte-awesome';
   import Home from './screens/Home/Home.svelte';
@@ -15,17 +16,25 @@
     '*': NotFound,
   };
   const { bars } = iconsGroup;
+  let isOptionModalVisible = false;
 </script>
 
 <header>
   <MainIcon width="50" />
   <h1>MEMO PWA</h1>
-  <Icon data={bars} style="width: 40px; height: 55px; margin-right: .1vw" />
+  <span on:click={() => (isOptionModalVisible = true)}>
+    <Icon data={bars} style="width: 40px; height: 55px; margin-right: .1vw" />
+  </span>
 </header>
 
 <main>
   <Router {routes} />
 </main>
+{#if isOptionModalVisible}
+  <Modal on:tapOnBackground={() => (isOptionModalVisible = false)}>
+    Work in progress
+  </Modal>
+{/if}
 
 <style>
   header {
