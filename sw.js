@@ -1,6 +1,4 @@
-console.log('sw loaded');
-
-const CACHE_NAME= 'v1';
+const CACHE_NAME = 'v1';
 
 const FILE_LIST = [
     './index.html',
